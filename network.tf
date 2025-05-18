@@ -1,8 +1,7 @@
 
 resource "azurerm_resource_group" "resourceGroup" {
-  location   = "eastus"
-  managed_by = null
-  name       = "devrg"
+  location = "eastus"
+  name     = "devrg_tf"
 
 }
 
