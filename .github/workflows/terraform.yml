@@ -32,7 +32,6 @@ jobs:
               uses: azure/login@v2
               with:
                 creds: ${{secrets.AZURE_SECRETS}}
-                tenant-id: "980a9497-3393-4e89-9671-4f0f938006fe"
 
             - name: "Setup Terraform environment"
               uses: hashicorp/setup-terraform@v3
@@ -42,7 +41,7 @@ jobs:
             - run: |
                 echo "Checking access to the storage account container..."
                 az storage container list \
-                    --account-name "tfbackendshubham" \
+                    --account-name "tfstateshubham" \
                     --auth-mode login
 
             - name: "Terraform init"
