@@ -1,0 +1,11 @@
+# Terraform directories and files
+.terraform/
+.terraform.lock.hcl
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Sensitive variable files (never commit secrets!)
+terraform.tfvars
+*.tfvars
