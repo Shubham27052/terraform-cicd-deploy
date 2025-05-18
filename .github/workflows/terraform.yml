@@ -36,6 +36,14 @@ jobs:
             - name: "Setup Terraform environment"
               uses: hashicorp/setup-terraform@v3
 
+            - run: az account show
+
+            - run: |
+                echo "Checking access to the storage account container..."
+                az storage container list \
+                    --account-name yourstorageacct \
+                    --auth-mode login
+
             - name: "Terraform init"
               run: terraform init
 
