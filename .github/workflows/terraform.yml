@@ -41,7 +41,7 @@ jobs:
             - run: |
                 echo "Checking access to the storage account container..."
                 az storage container list \
-                    --account-name yourstorageacct \
+                    --account-name "tfbackendshubham" \
                     --auth-mode login
 
             - name: "Terraform init"
