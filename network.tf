@@ -1,7 +1,7 @@
 
 resource "azurerm_resource_group" "resourceGroup" {
   location = "eastus"
-  name     = "devrg_tf"
+  name     = "devrg_tf2"
 
 }
 
