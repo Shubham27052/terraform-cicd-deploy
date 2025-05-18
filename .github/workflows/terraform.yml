@@ -38,11 +38,11 @@ jobs:
 
             - run: az account show
 
-            - run: |
-                echo "Checking access to the storage account container..."
-                az storage container list \
-                    --account-name "tfstateshubham" \
-                    --auth-mode login
+            # - run: |
+            #     echo "Checking access to the storage account container..."
+            #     az storage container list \
+            #         --account-name "tfstateshubham" \
+            #         --auth-mode login
 
             - name: "Terraform init"
               run: terraform init
