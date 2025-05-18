@@ -89,7 +89,6 @@ resource "azurerm_windows_virtual_machine" "app_vm" {
   location      = "eastus"
   max_bid_price = -1
   name          = "vmctefe01p"
-  # network_interface_ids = ["/subscriptions/f73a7f0f-eca9-48e7-8ff8-3050c11c67f2/resourceGroups/tsptkd-rg-prd-tkd-ue-01/providers/Microsoft.Network/networkInterfaces/tsptkd-nic-prd-app-ue-02"]
   network_interface_ids = [azurerm_network_interface.app_vm_nic.id]
 
   patch_assessment_mode = "ImageDefault"
@@ -100,12 +99,6 @@ resource "azurerm_windows_virtual_machine" "app_vm" {
   secure_boot_enabled   = false
   size                  = var.app_vm_size
 
-  tags = {
-    "Application Domain" = "trakaid"
-    "Application Name"   = "Cylotrak(CTE)"
-    "Application Owners" = "Dr.Dhiresh Vyas, Gangadhar Pasupula"
-    Environment          = "Production"
-  }
 
   vm_agent_platform_updates_enabled = false
   vtpm_enabled                      = false
