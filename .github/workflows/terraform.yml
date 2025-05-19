@@ -50,7 +50,7 @@ jobs:
             #         --account-name "tfstateshubham" \
             #         --auth-mode login
 
-            - run: az login --tenant "980a9497-3393-4e89-9671-4f0f938006fe"
+            # - run: az login --tenant "980a9497-3393-4e89-9671-4f0f938006fe"
 
             - name: "Terraform init"
               run: TF_LOG=DEBUG terraform init
