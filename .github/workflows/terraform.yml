@@ -34,12 +34,10 @@ jobs:
             - name: "Login to Azure Subscription"
               uses: azure/login@v2
               with:
-                # client-id: ${{ secrets.CLIENT_ID }}
-                # tenant-id: ${{ env.ARM_TENANT_ID }}
-                # subscription-id: ${{ env.ARM_SUBSCRIPTION_ID }}
-                # client-secret: ${{ secrets.CLIENT_SECRET }}
-
-                creds: ${{secrets.AZURE_SECRETS}}
+                auth-type: IDENTITY
+                tenant-id: env.ARM_TENANT_ID
+                subscription-id: env.ARM_SUBSCRIPTION_ID
+                enable-AzPSSession: true
 
             - name: "Setup Terraform environment"
               uses: hashicorp/setup-terraform@v3
@@ -50,13 +48,14 @@ jobs:
                 azcliversion: latest
                 inlineScript: |
                     az account show    
-            # - run: |
-            #     echo "Checking access to the storage account container..."
-            #     az storage container list \
-            #         --account-name "tfstateshubham" \
-            #         --auth-mode login
-
-            # - run: az login --tenant "980a9497-3393-4e89-9671-4f0f938006fe"
+            
+            # - name: Azure PowerShell script
+            #   uses: azure/powershell@v2
+            #   with:
+            #     azPSVersion: "latest"
+            #     inlineScript: |
+            #       Get-AzContext
+            #       Get-AzResourceGroup
 
             - name: "Terraform init"
               run: TF_LOG=DEBUG terraform init
