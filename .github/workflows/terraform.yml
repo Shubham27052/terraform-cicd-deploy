@@ -38,8 +38,12 @@ jobs:
             - name: "Setup Terraform environment"
               uses: hashicorp/setup-terraform@v3
 
-            - run: az account show
-
+            - name: Azure CLI script
+              uses: azure/cli@v2
+              with:
+                azcliversion: latest
+                inlineScript: |
+                    az account show    
             # - run: |
             #     echo "Checking access to the storage account container..."
             #     az storage container list \
