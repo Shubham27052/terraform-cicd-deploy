@@ -7,9 +7,6 @@ on:
             - master
 
 
-
-
-            
 env:
     TF_VAR_app_vm_size: "Standard_D2_v4"
     TF_VAR_db_vm_size: "Standard_D2_v4"
