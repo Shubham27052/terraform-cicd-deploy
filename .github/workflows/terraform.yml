@@ -30,20 +30,20 @@ jobs:
             - name: "Checkout code"
               uses: actions/checkout@v3
 
-            - name: "Login to Azure Subscription"
-              uses: azure/login@v2
-              with:
-                creds: ${{secrets.AZURE_SECRETS}}
+            # - name: "Login to Azure Subscription"
+            #   uses: azure/login@v2
+            #   with:
+            #     creds: ${{secrets.AZURE_SECRETS}}
 
             - name: "Setup Terraform environment"
               uses: hashicorp/setup-terraform@v3
 
-            - name: Azure CLI script
-              uses: azure/cli@v2
-              with:
-                azcliversion: latest
-                inlineScript: |
-                    az account show    
+            # - name: Azure CLI script
+            #   uses: azure/cli@v2
+            #   with:
+            #     azcliversion: latest
+            #     inlineScript: |
+            #         az account show    
             # - run: |
             #     echo "Checking access to the storage account container..."
             #     az storage container list \
