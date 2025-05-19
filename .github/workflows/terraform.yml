@@ -21,7 +21,6 @@ env:
     ARM_SUBSCRIPTION_ID: "f5a72aa1-60c1-4225-90ba-4e5273d6af91"
 
 
-
 jobs:
     terraform_plan:
         name: "terraform Plan"
