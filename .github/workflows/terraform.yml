@@ -35,8 +35,8 @@ jobs:
               uses: azure/login@v2
               with:
                 auth-type: IDENTITY
-                tenant-id: env.ARM_TENANT_ID
-                subscription-id: env.ARM_SUBSCRIPTION_ID
+                tenant-id: ${{ env.ARM_TENANT_ID }}
+                subscription-id: ${{ env.ARM_SUBSCRIPTION_ID }}
                 enable-AzPSSession: true
 
             - name: "Setup Terraform environment"
@@ -61,7 +61,7 @@ jobs:
               run: TF_LOG=DEBUG terraform init
 
             - name: Terraform Plan
-              run : terraform plan -out="plan.tfplan"
+              run: terraform plan -out="plan.tfplan"
 
             - name: View plan file
               run: terraform show plan.tfplan
