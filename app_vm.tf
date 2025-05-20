@@ -99,10 +99,6 @@ resource "azurerm_windows_virtual_machine" "app_vm" {
   secure_boot_enabled   = false
   size                  = var.app_vm_size
 
-
-  vm_agent_platform_updates_enabled = false
-  vtpm_enabled                      = false
-
   boot_diagnostics {
     storage_account_uri = null
   }
