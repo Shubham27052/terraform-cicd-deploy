@@ -55,7 +55,6 @@ resource "azurerm_subnet" "db_subnet" {
 }
 
 
-
 resource "azurerm_subnet" "app_subnet" {
   address_prefixes                              = ["192.168.30.128/27"]
   default_outbound_access_enabled               = true
