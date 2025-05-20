@@ -54,6 +54,7 @@ resource "azurerm_subnet" "db_subnet" {
   virtual_network_name                          = azurerm_virtual_network.main_vnet.name
 }
 
+
 resource "azurerm_subnet" "app_subnet" {
   address_prefixes                              = ["192.168.30.128/27"]
   default_outbound_access_enabled               = true
@@ -65,4 +66,3 @@ resource "azurerm_subnet" "app_subnet" {
   service_endpoints                             = []
   virtual_network_name                          = azurerm_virtual_network.main_vnet.name
 }
-
