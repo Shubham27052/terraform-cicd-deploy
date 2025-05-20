@@ -22,6 +22,7 @@ jobs:
     terraform_plan:
         name: "terraform Plan"
         runs-on: self-hosted
+        environment: terraform-azdeploy-env
         steps:
             - name: "Checkout code"
               uses: actions/checkout@v3
