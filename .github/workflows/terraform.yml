@@ -3,11 +3,8 @@ name: terraform pipeline automation
 on:
     push:
         branches:
-            - dev
+            - stage
        
-
-
-
 
 env:
     TF_VAR_app_vm_size: "Standard_D2_v4"
