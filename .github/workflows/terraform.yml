@@ -6,7 +6,7 @@ on:
             - stage
        
 
-            
+
 env:
     TF_VAR_app_vm_size: "Standard_D2_v4"
     TF_VAR_db_vm_size: "Standard_D2_v4"
@@ -46,14 +46,14 @@ jobs:
                 inlineScript: |
                     az account show    
 
+            - name: "Terraform init"
+              run: TF_LOG=DEBUG terraform init
+
             - name: Validate terraform code
               run: terraform validate
 
             - name: Run Terraform security
               uses: aquasecurity/tfsec-action@v1.0.0
-            
-            - name: "Terraform init"
-              run: TF_LOG=DEBUG terraform init
 
             - name: Terraform Plan
               run: terraform plan -out="plan.tfplan"
